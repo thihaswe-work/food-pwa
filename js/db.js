@@ -10,15 +10,6 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 import { renderRecipe, removeRecipe } from "./ui.js";
 
-// Enable offline persistence
-enableIndexedDbPersistence(db).catch((err) => {
-  if (err.code === "failed-precondition") {
-    console.log("Persistence failed: multiple tabs open");
-  } else if (err.code === "unimplemented") {
-    console.log("Persistence not available in this browser");
-  }
-});
-
 // reference to collection (⚠️ fix typo: "receipes" → "recipes")
 const recipesRef = collection(db, "receipes");
 
